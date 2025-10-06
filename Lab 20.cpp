@@ -16,13 +16,15 @@ public:
     Chair() {
         prices = new double[SIZE];
         legs = 0;
-        for (int i = 0; i < SIZE; i++)
-            prices[i] = 0;
-    }
-    Chair(int l,double prices[SIZE]) {
-        legs = l;
         for (int i = 0; i < SIZE; i++){
         double price = (rand() % (MAX-MIN+1) + MIN) / (double) 100;
+        prices[i]=price;
+        }
+    }
+    Chair(int l,double prices[SIZE]) {
+        prices = new double[SIZE];
+        legs = l;
+        for (int i = 0; i < SIZE; i++){
         prices[i] = 0;
         }
     }
@@ -62,9 +64,8 @@ int main() {
     chairPtr->print();
 
     //creating dynamic chair object with constructor
-    double prices[SIZE]{525.25, 434.34, 252.52};
-    Chair *livingChair = new Chair(3,prices);
-    livingChair->setPrices(525.25, 434.34, 252.52);
+    cout<<"DYNMAIC CHAIR OBKECT"<<endl;
+    Chair *livingChair = new Chair();
     livingChair->print();
     delete livingChair;
     livingChair = nullptr;
