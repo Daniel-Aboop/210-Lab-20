@@ -19,8 +19,7 @@ public:
         for (int i = 0; i < SIZE; i++)
             prices[i] = 0;
     }
-    Chair(int l) {
-        prices = new double[SIZE];
+    Chair(int l,double prices[SIZE]) {
         legs = l;
         for (int i = 0; i < SIZE; i++){
         double price = (rand() % (MAX-MIN+1) + MIN) / (double) 100;
@@ -63,7 +62,7 @@ int main() {
     chairPtr->print();
 
     //creating dynamic chair object with constructor
-    Chair *livingChair = new Chair(3);
+    Chair *livingChair = new Chair(3,);
     livingChair->setPrices(525.25, 434.34, 252.52);
     livingChair->print();
     delete livingChair;
